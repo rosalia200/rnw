@@ -1,26 +1,37 @@
 class Student:
-    name = ""
-    age = 0
-    gender = ""
+
     math= 0
     eng= 0
     swa= 0
     sci= 0
-    soc= 0
+    soc= 20
+    total = 0
+    average=0
 
-    def __init__(self,n,a,g,math,eng,swa,sci,soc):
-        Student.name = n
-        Student.age =a
-        Student.gender = g
-        Student.math=math
-        Student.eng=eng
-        Student.swa=swa
-        Student.sci=sci
-        Student.soc=soc
+    def __init__(self,math,eng,swa,sci):
+
+        self.math=math
+        self.eng=eng
+        self.swa=swa
+        self.sci=sci
+
+        self.total()
+        self.average()
+        self.mean()
+
+
+
 
 
     def total(self):
-        return self.math+ self.eng+self.swa+self.sci+self.soc
+        self.total = self.math+ self.eng+self.swa+self.sci+self.soc
+         #return self.total
 
     def average(self):
-        return self.total/5
+        self.average = self.total/5
+         #return self.average
+    def mean(self):
+        if self.total>100:
+            self.mean=self.total-self.soc
+        else:
+            self.mean=self.total-200
